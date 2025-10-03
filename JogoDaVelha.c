@@ -120,6 +120,29 @@ int main(){
     printf("*****************************************************\n");
     printf("                    Jogo da Velha                     \n");
     printf("*****************************************************\n");
-    printf("\tJo"\)
+    printf("\tJogador 1 = X\n");
+    printf("\tJogador 2 = O\n");
+    printf("\n");
+    char vencedor = ' ';
+
+    reiniciarTabuleiro();
+    while(venceu == ' ' && verificarCasa() != 0){
+        imprime_tabuleiro();
+        jogadaP1();
+        vencedor = venceu();
+        if(vencedor != ' ' || verificarCasa() == 0){
+            break;
+        }
+        imprime_tabuleiro();
+        jogadaP2();
+        vencedor = venceu();
+        if(vencedor != ' ' || verificarCasa() == 0){
+            break;
+        }
+    }
+    imprime_tabuleiro();
+    mostraVencedor(vencedor);
+    system("pause");
+    return 0;
 }
 
